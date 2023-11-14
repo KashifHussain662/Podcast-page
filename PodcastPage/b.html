@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Waves Example</title>
+</head>
+<body>
+    <!-- Your audio element -->
+    <audio id="audio" controls>
+        <source src="./Dil Bechara Neha Kakkar 128 Kbps.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- The canvas to draw the waveform -->
+    <canvas id="waveformCanvas" width="800" height="200"></canvas>
+
+    <!-- Script to visualize the audio waves -->
+    <script>
+        // Wait for the DOM to load
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the audio element
+            var audio = document.getElementById('audio');
+
+            // Get the canvas element
+            var canvas = document.getElementById('waveformCanvas');
+            var ctx = canvas.getContext('2d');
+
+            // When the audio is loaded, create the waveform
+            audio.addEventListener('loadeddata', function() {
+                // Create a Web Audio API context
+                var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+                // Create an analyser node
+                var analyser = audioCtx.createAnalyser();
+                analyser.fftSize = 2048;
+                var bufferLength = analyser.frequencyBinCount;
+                var dataArray = new Uint8Array(bufferLength);
+
+                // Connect the audio element to the analyser
+                var source = audioCtx.createMediaElementSource(audio);
+                source.connect(analyser);
+                analyser.connect(audioCtx.destination);
+
+                // Function to draw the waveform
+                function drawWaveform() {
+                    analyser.getByteTimeDomainData(dataArray);
+                    ctx.fillStyle = 'rgb(255, 255, 255)';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    ctx.lineWidth = 2;
+                    ctx.strokeStyle = 'rgb(0, 0, 0)';
+                    ctx.beginPath();
+                    var sliceWidth = canvas.width * 1.0 / bufferLength;
+                    var x = 0;
+                    for (var i = 0; i < bufferLength; i++) {
+                        var v = dataArray[i] / 128.0;
+                        var y = v * canvas.height / 2;
+                        if (i === 0) {
+                            ctx.moveTo(x, y);
+                        } else {
+                            ctx.lineTo(x, y);
+                        }
+                        x += sliceWidth;
+                    }
+                    ctx.lineTo(canvas.width, canvas.height / 2);
+                    ctx.stroke();
+
+                    requestAnimationFrame(drawWaveform);
+                }
+
+                // Start drawing the waveform
+                drawWaveform();
+            });
+        });
+    </script>
+</body>
+</html>

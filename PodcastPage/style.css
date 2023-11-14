@@ -1,0 +1,181 @@
+  *{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background: black;
+    color: white;
+    font-family: Arial;
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgb(3, 14, 2);
+    color: white;
+    padding: 20px;
+}
+.items ul{
+    display: flex;
+    gap: 25px;
+}
+.items ul li{
+    list-style: none;
+    font-weight: bold;
+}
+.container-title-img{
+    display: flex;
+    justify-content: space-around;
+}
+.container-title-img .title-text{
+    padding:50px 245px;
+}
+.container-title-img .title-text #a {
+    font-size: 20px;
+    color: lightgreen;
+}
+.container-title-img .title-text #b {
+    font-size: 40px;
+    line-height: 45px;
+    margin-top: 10px;
+}
+.container-title-img .title-text #c {
+    font-size: 17px;
+    margin-top: 25px;
+}
+.container-title-img .title-text .btns{
+    margin-top: 35px;
+
+}
+.container-title-img .title-text .btns #d {
+    padding: 10px 25px;
+    border: 1px solid white;
+    border-radius: 25px;
+    background-color: rgb(18, 151, 18);
+    font-weight: bold;
+}
+.container-title-img .title-text .btns #e {
+    padding: 10px 25px;
+    border: 1px solid white;
+    border-radius: 25px;
+    background: transparent;
+    color: rgb(18, 151, 18);
+    margin-left: 20px;
+    font-weight: bold;
+}
+.container-title-img .title-img{
+    padding: 50px 50px 0px 0px;
+}
+.container-title-img .title-img img{
+height: 270px;
+}
+.music{
+    height: 85px;
+    background-color: rgb(60, 61, 61);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.audio{
+    width: 400px;
+    height: 40px;
+}
+.main{
+    padding: 100px 50px 0px 50px;
+
+}
+#f{
+    font-size: 20px;
+    font-weight: bold;
+    color: lightgreen;
+    text-align: center;
+}
+#g{
+    margin:10px 0px ;
+    text-align: center;
+    font-size: 35px;
+    letter-spacing: 5px;
+}
+.container-episode{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    
+}
+.container-episode .episode-innformation{
+    border: 1px solid white;
+    padding: 10px 20px;
+}
+#h{
+    margin: 20px 0px 20px 0px;
+}
+#i{
+    background: rgb(12, 236, 12);
+    font-weight: bold;
+    padding: 15px 35px;
+    border: 1px solid white;
+    border-radius: 25px;
+    margin: 100px 550px;
+}
+.ftr{
+    display: flex;
+    justify-content: center;
+    padding: 100px 199px;
+    gap: 50px;
+    background-color: rgb(60, 61, 61);
+}
+.ftr .ftr-text #aa {
+    font-size: 20px;
+    color: lightgreen;
+}
+.ftr .ftr-text  #bb {
+    font-size: 40px;
+    line-height: 45px;
+    margin-top: 10px;
+}
+.ftr .ftr-text  #cc {
+    font-size: 17px;
+    margin-top: 25px;
+}
+.ftr .ftr-text .ftr-btns1{
+    margin-top: 35px;
+
+}
+.ftr .ftr-text .ftr-btns1 #dd {
+    padding: 15px 35px;
+    border: 1px solid white;
+    border-radius: 25px;
+    background-color: rgb(18, 151, 18);
+    font-weight: bolder;
+    font-size: 15px;
+}
+.music-container{
+    padding: 100px 100px;
+}
+#aaa{
+    text-align: center;
+    color: green;
+    font-size: 20px;
+}
+#bbb{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 35px;
+}
+.infrm{
+    background-color: rgb(51, 54, 54);
+    margin-top: 20px;
+}
+.music-head{
+    padding: 10px;
+    gap: 30px;
+    line-height: 70px;
+    align-items: center;
+    display: flex;
+     }
+.music-head1{
+    padding: 5px 15px;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+     }
